@@ -20,7 +20,7 @@ public class Conta {
 
 	public void deposita(double quantidade) {
 		if (quantidade < 0) {
-			throw new ValorInvalidoException();
+			throw new ValorInvalidoException(quantidade);
 		} else {
 			this.saldo = this.saldo + quantidade;
 		}
