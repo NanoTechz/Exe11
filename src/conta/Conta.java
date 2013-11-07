@@ -20,8 +20,7 @@ public class Conta {
 
 	public void deposita(double quantidade) {
 		if (quantidade < 0) {
-			throw new IllegalArgumentException("Você tentou depositar"
-					+ " um valor negativo");
+			throw new ValorInvalidoException();
 		} else {
 			this.saldo = this.saldo + quantidade;
 		}
