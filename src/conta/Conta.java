@@ -5,11 +5,11 @@ public class Conta {
 	private Cliente titular;
 	private double saldo;
 
-	public Conta(Cliente titular, int numero){
+	public Conta(Cliente titular, int numero) {
 		this.titular = titular;
 		this.numero = numero;
 	}
-	
+
 	public void saca(double quantidade) {
 		if (quantidade > this.saldo) {
 			System.out.println("Não posso sacar fora do limite!");
@@ -19,11 +19,12 @@ public class Conta {
 	}
 
 	public void deposita(double quantidade) {
-		if (quantidade < 0){
-			throw new IllegalArgumentException();
-		}else{
+		if (quantidade < 0) {
+			throw new IllegalArgumentException("Você tentou depositar"
+					+ " um valor negativo");
+		} else {
 			this.saldo = this.saldo + quantidade;
-		}	
+		}
 	}
 
 	public int getNumero() {
